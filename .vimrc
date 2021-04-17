@@ -9,13 +9,15 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'glepnir/oceanic-material'
 Plugin 'vim-python/python-syntax'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vimsence/vimsence'
 Plugin 'tpope/vim-fugitive'
-
+Plugin 'neoclide/coc.nvim'
+Plugin 'tmsvg/pear-tree'
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,3 +46,12 @@ let g:python_highlight_space_errors = 0
 let g:vimsence_small_text = 'NeoVim'
 let g:vimsence_small_image = 'neovim'
 set splitright
+
+set updatetime=300
+
+" for command mode
+nnoremap <S-Tab> <<
+" for insert mode
+inoremap <S-Tab> <C-d>
+" use <c-space>for trigger completion inoremap
+inoremap <silent><expr> <c-space> coc#refresh()
