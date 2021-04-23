@@ -15,10 +15,21 @@ Plug 'prettier/vim-prettier', {'do': 'npm install'}
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 
+" NERD TREE
+Plug 'preservim/nerdtree'
+
 Plug 'joshdick/onedark.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
+
+" DEVICONS
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" WINDOW RESIZE
+Plug 'simeji/winresizer'
+
 call plug#end()
 " NVIM VUNDLE
 
@@ -132,9 +143,19 @@ let g:closetag_shortcut = '>'
 "
 let g:closetag_close_shortcut = '<leader>>'
 
+" NERDTREE
+nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>m :NERDTreeClose<CR>
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let g:airline_powerline_fonts = 1
+
 " for command mode
 nnoremap <S-Tab> <<
 " for insert mode
 inoremap <S-Tab> <C-d>
 " use <c-space>for trigger completion inoremap
 inoremap <silent><expr> <c-space> coc#refresh()
+" Change vsplit sizes
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
