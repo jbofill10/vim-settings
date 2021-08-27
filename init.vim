@@ -1,12 +1,11 @@
 set nocompatible              " be iMproved, required VIM PLUG
 
 call plug#begin('~/.config/nvim/plugged/')
-"Plug 'glepnir/oceanic-material'
-"Plug 'vim-python/python-syntax'
+
 Plug 'vim-airline/vim-airline'
-Plug 'dakyskye/coc-cord'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim'
+Plug 'andweeb/presence.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'prettier/vim-prettier', {'do': 'npm install'}
 
@@ -37,8 +36,8 @@ call plug#end()
 
 " TAB CONFIG
 set termguicolors
-nnoremap <leader>v     :BufferPrevious<CR>
-nnoremap <leader>c     :BufferNext<CR>
+nnoremap <leader>c     :BufferPrevious<CR>
+nnoremap <leader>v     :BufferNext<CR>
 nnoremap <leader>x     :BufferClose<CR>
 
 " NOTE: If barbar's option dict isn't created yet, create it
@@ -189,7 +188,7 @@ let g:closetag_close_shortcut = '<leader>>'
 nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>m :NERDTreeClose<CR>
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:airline_powerline_fonts = 1
 
 " for command mode
